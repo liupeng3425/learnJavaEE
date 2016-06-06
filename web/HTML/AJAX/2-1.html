@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    <style>
+        label, input, select, option {
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+<h1>查询</h1>
+<label for="keyWord">查询的员工编号：</label>
+<input type="text" id="keyWord"/>
+<button id="search">查询</button>
+<p id="searchResult"></p>
+
+<h1>创建</h1>
+<label for="name">新建的员工姓名：</label>
+<input type="text" id="name"/>
+<label for="stuffId">新建的员工编号：</label>
+<input type="text" id="stuffId"/>
+<label for="sex">性别：</label>
+<select id="sex">
+    <option>男</option>
+    <option>女</option>
+</select>
+<button id="create">创建</button>
+<p id="createResult"></p>
+
+
+<script type="text/javascript">
+    $("#search").click(function () {
+        var xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", "get.php?number=" + $("#keyWord").value, true);
+        xmlHttpRequest.send();
+        xmlHttpRequest.onreadystatechange = function () {
+//        首先，== equality 等同，=== identity 恒等。
+//        ==， 两边值类型不同的时候，要先进行类型转换，再比较。
+//        ===，不做类型转换，类型不同的一定不等。
+            if (xmlHttpRequest.readyState === 4) {
+                // do something
+                if (xmlHttpRequest.status === 200)
+                    $("#searchResult").html(xmlHttpRequest.responseText);
+                else
+                    $("#searchResult").html("status:" + xmlHttpRequest.status);
+            }
+        }
+    });
+    $("#create").click(function () {
+        var xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("POST", "post.php", true);
+        xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        var data = "name=" + $("#name").value + "$number=" + $("#stuffId").value + "&sex=" + $("#sex").value;
+        xmlHttpRequest.send(data);
+        xmlHttpRequest.onreadystatechange = function () {
+            if (xmlHttpRequest.readyState === 4)
+                if (xmlHttpRequest.status === 200)
+                    $("#createResult").html(xmlHttpRequest.responseText);
+                else
+                    $("#createResult").html("status:" + xmlHttpRequest.status);
+        }
+    })
+</script>
+</body>
+</html>
