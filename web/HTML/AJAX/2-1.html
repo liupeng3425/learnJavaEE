@@ -5,28 +5,32 @@
     <title>Ajax</title>
     <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
     <style>
-        label, input, select, option {
+        label, input, select, option, button{
             font-size: large;
+            line-height: 30px;
+            height: 28px;
+            margin: 3px;
         }
+
     </style>
 </head>
 <body>
 <h1>查询</h1>
 <label for="keyWord">查询的员工编号：</label>
-<input type="text" id="keyWord"/>
+<input type="text" id="keyWord"/><br />
 <button id="search">查询</button>
 <p id="searchResult"></p>
 
 <h1>创建</h1>
 <label for="name">新建的员工姓名：</label>
-<input type="text" id="name"/>
+<input type="text" id="name"/><br />
 <label for="stuffId">新建的员工编号：</label>
-<input type="text" id="stuffId"/>
+<input type="text" id="stuffId"/><br />
 <label for="sex">性别：</label>
 <select id="sex">
     <option>男</option>
     <option>女</option>
-</select>
+</select><br />
 <button id="create">创建</button>
 <p id="createResult"></p>
 
