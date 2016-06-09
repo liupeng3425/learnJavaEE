@@ -7,10 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+</head>
+<body>
+<h1>welcome</h1>
+<a href="HTML/AJAX/AJAX-jquery.html">AJAX-jquery.html</a>
+</body>
 </html>
