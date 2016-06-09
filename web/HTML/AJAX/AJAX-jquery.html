@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax-jquery</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.js" type="text/javascript"></script>
+    <style>
+        label, input, select, option, button {
+            font-size: large;
+            line-height: 30px;
+            height: 28px;
+            margin: 3px;
+        }
+
+    </style>
+</head>
+<body>
+<h1>查询</h1>
+<label for="keyWord">查询的员工编号：</label>
+<input type="text" id="keyWord"/><br/>
+<button id="search">查询</button>
+<p id="searchResult"></p>
+
+<h1>创建</h1>
+<label for="name">新建的员工姓名：</label>
+<input type="text" id="name"/><br/>
+<label for="stuffId">新建的员工编号：</label>
+<input type="text" id="stuffId"/><br/>
+<label for="sex">性别：</label>
+<select id="sex">
+    <option>男</option>
+    <option>女</option>
+</select><br/>
+<button id="create">创建</button>
+<p id="createResult"></p>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#search").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "get.php?number=" + $("#keyWord").val(),
+                dataType: "json",
+                success: function (data) {
+                    if (data.success) {
+                        $("#searchResult").html(data.msg);
+                    } else {
+                        $("#searchResult").html("出现错误：" + data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    $("#searchResult").html("status:" + jqXHR.status);
+                }
+            });
+        });
+
+        $("#create").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "post.php",
+                dataType: "json",
+                data: {
+                    name: $("#name").val(),
+                    number: $("#stuffId").val(),
+                    sex: $("#sex").val()
+                },
+                success: function (data) {
+                    if (data.success) {
+                        $("#createResult").html(data.msg);
+                    } else {
+                        $("#createResult").html("出现错误：" + data.msg);
+                    }
+                },
+                error: function (jqXHR) {
+                    $("#createResult").html("status:" + jqXHR.status);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
