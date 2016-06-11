@@ -1,4 +1,4 @@
-package main.java.utils;
+package utils;
 
 import org.xml.sax.SAXException;
 import utils.XmlDecoder;

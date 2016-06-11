@@ -1,7 +1,8 @@
-package main.java.utils;
+package utils;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+import utils.SaxHandler;
 
 import javax.xml.parsers.*;
 import java.io.File;

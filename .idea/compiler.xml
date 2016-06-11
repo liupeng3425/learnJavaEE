@@ -22,10 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="learnJavaEE" />
+        <module name="basicDemo" />
+        <module name="greeting" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="basicDemo" target="1.7" />
+      <module name="greeting" target="1.5" />
       <module name="learnJavaEE" target="1.7" />
     </bytecodeTargetLevel>
   </component>
