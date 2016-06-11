@@ -8,10 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>welcome</title>
 </head>
 <body>
-<h1>welcome</h1>
-<a href="HTML/AJAX/AJAX-jquery.html">AJAX-jquery.html</a>
+<h1>demos</h1>
+<ul>
+    <li><a href="HTML/AJAX/AJAX-jquery.html">AJAX-jquery.html</a></li>
+    <li><a href="HTML/jsp/Comment.jsp">注释</a></li>
+    <li><a href="HTML/jsp/Assignment.jsp">赋值</a></li>
+</ul>
+
+
 </body>
 </html>
