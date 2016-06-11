@@ -1,10 +1,10 @@
-package utils;
+package main.java.utils;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import utils.XmlDecoder;
+import main.java.utils.XmlDecoder;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
