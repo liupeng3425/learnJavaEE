@@ -23,11 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="basicDemo" />
+        <module name="beginningSpring" />
         <module name="greeting" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="basicDemo" target="1.7" />
+      <module name="beginningSpring" target="1.5" />
       <module name="greeting" target="1.5" />
       <module name="learnJavaEE" target="1.7" />
     </bytecodeTargetLevel>
