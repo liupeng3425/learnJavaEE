@@ -1,13 +1,26 @@
 package spring.ch2;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  * Created by Peng on 2016/7/3.
  * AccountServiceImpl
  */
+@Service
 public class AccountServiceImpl implements AccountService {
     private AccountDao accountDao;
 
+    @Autowired
     public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+
+    public AccountServiceImpl() {
+        new AccountServiceImpl(null);
+    }
+
+    public AccountServiceImpl(AccountDao accountDao) {
         this.accountDao = accountDao;
     }
 

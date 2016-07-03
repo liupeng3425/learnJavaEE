@@ -19,8 +19,8 @@ public class Ch2BeanConfiguration {
     }
 
     @Bean
-    private AccountDao accountDao() {
-        AccountDaoInMemoryImpl bean = new AccountDaoInMemoryImpl();
-        return bean;
+    public AccountDao accountDao() {
+        // dependencies of accountDao bean will be injected here...
+        return new AccountDaoInMemoryImpl();
     }
 }

@@ -1,5 +1,7 @@
 package spring.ch2;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.Map;
  * Created by Peng on 2016/7/3.
  * AccountDaoInMemoryImpl
  */
+@Repository
 public class AccountDaoInMemoryImpl implements AccountDao {
     private Map<Long, Account> accountsMap = new HashMap<Long, Account>();
 
@@ -19,9 +22,9 @@ public class AccountDaoInMemoryImpl implements AccountDao {
         account1.setBalance(10.0);
 
         Account account2 = new Account();
-        account1.setId(2L);
-        account1.setOwnerName("Mary");
-        account1.setBalance(20.0);
+        account2.setId(2L);
+        account2.setOwnerName("Mary");
+        account2.setBalance(20.0);
 
         accountsMap.put(account1.getId(), account1);
         accountsMap.put(account2.getId(), account2);
