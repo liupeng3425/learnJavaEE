@@ -1,5 +1,6 @@
 package spring.ch2;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -9,17 +10,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Application {
     public static void main(String[] args) {
-//        //基于java注解的配置来创建和使用容器
-//        AnnotationConfigApplicationContext applicationContext =
-//                new AnnotationConfigApplicationContext(Ch2BeanConfiguration.class);
+        //基于java注解的配置来创建和使用容器
+        AnnotationConfigApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(Ch2BeanConfiguration.class);
 
 //        //基于xml的配置来创建和使用容器
 //        ClassPathXmlApplicationContext applicationContext =
 //                new ClassPathXmlApplicationContext("ch2-beans.xml");
-
-        //基于java注解@service @Autowired 不需要Ch2BeanConfiguration
-        ClassPathXmlApplicationContext applicationContext =
-                new ClassPathXmlApplicationContext("ch2-autowired.xml");
+//
+//        //基于java注解@service @Autowired 不需要Ch2BeanConfiguration
+//        ClassPathXmlApplicationContext applicationContext =
+//                new ClassPathXmlApplicationContext("ch2-autowired.xml");
 
         //在spring容器内部访问accountService bean
         AccountService accountService =

@@ -1,5 +1,6 @@
 package spring.ch2;
 
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -10,11 +11,15 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class Ch2BeanConfiguration {
+    @Bean
+    public AccountDao accountDaoJdbc() {
+        AccountDaoJdbcImpl bean = new AccountDaoJdbcImpl();
+        return bean;
+    }
 
     @Bean
     public AccountService accountService() {
         AccountServiceImpl bean = new AccountServiceImpl();
-        bean.setAccountDao(accountDao());
         return bean;
     }
 
